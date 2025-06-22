@@ -17,7 +17,7 @@ function ProductManager({ token }) {
 
     const fetchProducts = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/admin/products', {
+            const res = await axios.get('http://localhost:3000/api/admin/products', {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setProducts(res.data);
@@ -29,7 +29,7 @@ function ProductManager({ token }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/admin/products', form, {
+            await axios.post('http://localhost:3000/api/admin/products', form, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             fetchProducts();
@@ -47,7 +47,7 @@ function ProductManager({ token }) {
 
     const handleDelete = async (stt) => {
         try {
-            await axios.delete(`http://localhost:5000/api/admin/products/${stt}`, {
+            await axios.delete(`http://localhost:3000/api/admin/products/${stt}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             fetchProducts();
@@ -66,7 +66,7 @@ function ProductManager({ token }) {
                 value={form.stt}
                 onChange={(e) => setForm({ ...form, stt: e.target.value })}
                 required
-                />
+                /{'>'}
                 <input
                     type="text"
                     placeholder="Nhóm Hàng"

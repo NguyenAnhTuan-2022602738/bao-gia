@@ -12,8 +12,6 @@ function Home() {
                 <QRGenerator priceType="BLVIP" />
                 <QRGenerator priceType="BL" />
             </div>
-
-            {/* Các nội dung khác của trang chủ */}
             <div className="text-center">
                 <p>Quét QR code tương ứng để xem báo giá</p>
             </div>
